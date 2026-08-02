@@ -65,3 +65,43 @@
 #include <string>
 using namespace std;
 
+const int MAX = 10;
+
+void readMatrix(int mat[MAX][MAX], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << "Enter element [" << i << "][" << j << "]: ";
+            cin >> mat[i][j];
+        }
+    }
+}
+
+
+void displayMatrix(int mat[MAX][MAX], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << setw(5) << mat[i][j];
+        }
+        cout << endl;
+    }
+}
+
+
+void transposeMatrix(int mat[MAX][MAX], int rows, int cols, int result[MAX][MAX]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[j][i] = mat[i][j];
+        }
+    }
+}
+
+
+void addMatrices(int a[MAX][MAX], int b[MAX][MAX], int rows, int cols, int result[MAX][MAX]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[i][j] = a[i][j] + b[i][j];
+        }
+    }
+}
+
+
